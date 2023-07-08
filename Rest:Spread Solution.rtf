@@ -1,0 +1,75 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Bold;\f1\froman\fcharset0 Times-Roman;\f2\fmodern\fcharset0 Courier;
+\f3\froman\fcharset0 Times-BoldItalic;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa321\partightenfactor0
+
+\f0\b\fs48 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Solution\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 In this exercise, you\'92ll refactor some ES5 code into ES2015.\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 ES5 Function that takes a variable number of arguments\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b0\fs26 \cf0 function filterOutOdds() \{\
+  var nums = Array.prototype.slice.call(arguments);\
+  return nums.filter(function(num) \{\
+    return num % 2 === 0\
+  \});\
+\}\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 ES2015 Function that takes a variable number of arguments\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b0\fs26 \cf0 /* Write an ES2015 Version */\
+\
+const filterOutOdds = (...args) => args.filter(v => v % 2 === 0)\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 findMin\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 Write a function called findMin that accepts a variable number of arguments and returns the smallest argument.\
+Make sure to do this using the rest and spread operator.\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 const findMin = (...args) => Math.min(...args)\
+findMin(1,4,12,-3) // -3\
+findMin(1,-1) // -1\
+findMin(3,1) // 1\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 mergeObjects\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 Write a function called\'a0
+\f3\i\b mergeObjects
+\f1\i0\b0 \'a0that accepts two objects and returns a new object which contains all the keys and values of the first object and second object.\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 const mergeObjects = (obj1, obj2) => (\{...obj1, ...obj2\})\
+mergeObjects(\{a:1, b:2\}, \{c:3, d:4\}) // \{a:1, b:2, c:3, d:4\}\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 doubleAndReturnArgs\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 Write a function called\'a0
+\f3\i\b doubleAndReturnArgs
+\f1\i0\b0 \'a0which accepts an array and a variable number of arguments. The function should return a new array with the original array values and all of additional arguments doubled.\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 const doubleAndReturnArgs = (arr, ...args) => [...arr, ...args.map(v => v *2)]\
+doubleAndReturnArgs([1,2,3],4,4) // [1,2,3,8,8]\
+doubleAndReturnArgs([2],10,4) // [2, 20, 8]\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 Slice and Dice\
+}

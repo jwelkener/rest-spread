@@ -41,10 +41,10 @@ and return a new array without that item. */
 
 function removeRandom(items) {
 	const index = Math.floor(Math.random()*items.length);
-	return items.slice(0, index).concat(items.slice(index+1));
+	return [...items.slice(0, index), ...items.slice(index+1)];
 }
 
-const removeRandom = (items) => {
+const removeRandom2 = (items) => {
 	const index = Math.floor(Math.random()*items.length);
 	return items.slice(0, index).concat(items.slice(index+1));
 }
@@ -54,33 +54,37 @@ function extend(array1, array2) {
 	return array1.concat(array2);
 }
 
-const extend = (array1, array2) => [...array1, ...array2];
+function extend1(array1, array2) {
+	[...array1, ...array2];
+}
+
+const extend2 = (array1, array2) => [...array1, ...array2];
 
 /** Return a new object with all the keys and values
 from obj and a new key/value pair */
 
-function addKeyVal(obj, key, val) {
-	let newObj = Object.assign({}, obj);
+function addKeyVal1(obj, key, val) {
+	let newObj = {...obj}
 	newObj[key] = val;
 	return newObj;
 }
 
-const addKeyVal = (obj, key, val) => ({...obj, [key]:val});
+const addKeyVal2 = (obj, key, val) => ({...obj, [key]:val});
 
 /** Return a new object with a key removed. */
 
-function removeKey(obj, key) {
-	let newObj = Object.assign({}, obj);
+function removeKey1(obj, key) {
+	let newObj = {...obj}
 	delete newObj[key];
 	return newObj;
 }
 
-const removeKey = (obj, key) => {
+const removeKey2 = (obj, key) => {
 	const {[key]: removedKey, ...rest} = obj;
 	return rest;
 }
 
-const removeKey = (obj, key) => ({[key]: removedKey, ...rest} = obj, rest)
+const removeKey2 = (obj, key) => ({[key]: removedKey, ...rest} = obj, rest)
 
 /** Combine two objects and return a new object. */
 
@@ -88,18 +92,18 @@ function combine(obj1, obj2) {
 	return Object.assign({}, obj1, obj2);
 }
 
-const combine = (obj1, obj2) => ({...obj1, ...obj2})
+const combine2 = (obj1, obj2) => ({...obj1, ...obj2})
 
 
 /** Return a new object with a modified key and value. */
 
 function update(obj, key, val) {
-	let newObj = Object.assign({}, obj);
+	let newObj = {...obj}
 	newObj[key] = val;
 	return newObj;
 }
 
-const update = (obj, key, val) => ({...obj, [key]: val});
+const update2 = (obj, key, val) => ({...obj, [key]: val});
 
 
 

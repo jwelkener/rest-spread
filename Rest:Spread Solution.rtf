@@ -8,16 +8,16 @@
 \pard\pardeftab720\sa321\partightenfactor0
 
 \f0\b\fs48 \cf0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Solution\
+Solution\
 \pard\pardeftab720\sa240\partightenfactor0
 
 \f1\b0\fs24 \cf0 In this exercise, you\'92ll refactor some ES5 code into ES2015.\
 \pard\pardeftab720\sa298\partightenfactor0
 
-\f0\b\fs36 \cf0 ES5 Function that takes a variable number of arguments\
+\f0\b\fs36 \cf0 \ul \ulc0 ES5 Function that takes a variable number of arguments\
 \pard\pardeftab720\partightenfactor0
 
-\f2\b0\fs26 \cf0 function filterOutOdds() \{\
+\f2\b0\fs26 \cf0 \ulc0 function filterOutOdds() \{\
   var nums = Array.prototype.slice.call(arguments);\
   return nums.filter(function(num) \{\
     return num % 2 === 0\
@@ -25,10 +25,10 @@
 \}\
 \pard\pardeftab720\sa298\partightenfactor0
 
-\f0\b\fs36 \cf0 ES2015 Function that takes a variable number of arguments\
+\f0\b\fs36 \cf0 \ulc0 ES2015 Function that takes a variable number of arguments\
 \pard\pardeftab720\partightenfactor0
 
-\f2\b0\fs26 \cf0 /* Write an ES2015 Version */\
+\f2\b0\fs26 \cf0 \ulc0 /* Write an ES2015 Version */\ulnone \
 \
 const filterOutOdds = (...args) => args.filter(v => v % 2 === 0)\
 \pard\pardeftab720\sa298\partightenfactor0
